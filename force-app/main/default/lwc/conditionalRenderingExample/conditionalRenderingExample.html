@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Conditional Rendering Example">
+        <lightning-input type="checkbox" onchange={displayDivHandler}></lightning-input>
+    
+        <template if:true={displayDivTag}>
+            <div>I am here</div>
+        </template>
+
+        <template if:false={displayDivTag}>
+            <div>I am false</div>
+        </template>
+
+        <h1>Below are the example using For each</h1>
+
+        <template for:each={cityList} for:item="city">
+            <p key={city}>{city}</p>
+        </template>
+
+        <h1>Below are the example using Iterator</h1>
+
+        <template iterator:it={cityList}>
+            <p key={it.value}>{it.value}</p>
+        </template>
+    </lightning-card>
+</template>
